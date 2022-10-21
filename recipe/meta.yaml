@@ -6,13 +6,15 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/materialsproject/emmet/archive/v{{ version }}.tar.gz
-  sha256: fb3127b078897b824ad14698185136f6e757ee773ec0dcb32f681248e70a6803
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/emmet-api-{{ version }}.tar.gz
+  sha256: 0cd4425326f1636c62743a3214277f1b27dfa02f1d313c00c6bfffcc02a4970f
+  patches:
+    - pypi.patch
 
 build:
   noarch: python
-  script: cd emmet-api && {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   host:
