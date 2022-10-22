@@ -1,5 +1,5 @@
 {% set name = "emmet-api" %}
-{% set version = "0.38.1" %}
+{% set version = "0.38.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/emmet-api-{{ version }}.tar.gz
-  sha256: 0cd4425326f1636c62743a3214277f1b27dfa02f1d313c00c6bfffcc02a4970f
+  sha256: 391c8d587c28c19c17047873d9e1dfb6109f323ad9f6001d62cb1c80ca0a9439
   patches:
     - pypi.patch
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
