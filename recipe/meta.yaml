@@ -27,6 +27,10 @@ requirements:
     - maggma
     - python >=3.8
     - uvicorn
+    - ddtrace
+    - setproctitle
+    - shapely
+    - uvicorn-tschaume
 
 test:
   imports:
