@@ -22,6 +22,7 @@ requirements:
   run:
     - boto3
     - emmet-core
+    - pydantic-core <2
     - fastapi
     - gunicorn
     - maggma
