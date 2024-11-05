@@ -1,5 +1,5 @@
 {% set name = "emmet-api" %}
-{% set version = "0.38.6" %}
+{% set version = "0.38.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/emmet-api-{{ version }}.tar.gz
-  sha256: 2409f403ce3e212bff3df667f591f6740eec3e7f9f4073938cb56aa980aa5e89
+  sha256: b9a2302454972fcbc256214b173af21ed6b289f3af803debf912bf2f4af48dec
 
 build:
   noarch: python
@@ -22,6 +22,7 @@ requirements:
   run:
     - boto3
     - emmet-core
+    - pydantic-core <2
     - fastapi
     - gunicorn
     - maggma
