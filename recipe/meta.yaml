@@ -28,7 +28,7 @@ requirements:
     - maggma
     - python >={{ python_min }}
     - uvicorn
-    - pydantic <2.10
+    - pydantic <2
 
 test:
   imports:
