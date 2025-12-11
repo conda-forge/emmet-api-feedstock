@@ -30,6 +30,12 @@ requirements:
     - python >={{ python_min }}
     - uvicorn
     - pydantic
+    - asgi-logger
+    - ddtrace
+    - shapely
+    - setproctitle
+    - pymatgen-analysis-alloys
+    - pymatgen-analysis-defects
 
 test:
   imports:
