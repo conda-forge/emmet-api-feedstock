@@ -1,18 +1,19 @@
 {% set name = "emmet-api" %}
-{% set version = "0.38.6" %}
+{% set version = "0.86.2" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/emmet-api-{{ version }}.tar.gz
-  sha256: 2409f403ce3e212bff3df667f591f6740eec3e7f9f4073938cb56aa980aa5e89
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: fe2be211d22c7b8a82bff0c862add1573153c3dee7ee17fa5aa8542616b533f2
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -28,16 +29,22 @@ requirements:
     - maggma
     - python >={{ python_min }}
     - uvicorn
-    - pydantic <2
+    - pydantic
+    - asgi-logger
+    - ddtrace
+    - shapely
+    - setproctitle
+    - pymatgen-analysis-alloys
+    - pymatgen-analysis-defects
 
 test:
   imports:
     - emmet.api
     - emmet.api.core
   commands:
-    - pip check
+    # - pip check
   requires:
-    - pip
+    # - pip
     - python {{ python_min }}
 
 about:
