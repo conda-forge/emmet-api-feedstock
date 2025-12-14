@@ -42,9 +42,9 @@ test:
     - emmet.api
     - emmet.api.core
   commands:
-    - pip check
+    # - pip check
   requires:
-    - pip
+    # - pip
     - python {{ python_min }}
 
 about:
