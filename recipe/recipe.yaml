@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: emmet-api
-  version: "0.87.2"
+  version: "0.87.3"
   python_min: "3.11"
 
 package:
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 0448c9ea49f993f5cc69a587b7b8b51cd700a9cf1687214022e9f94ae66ce2ff
+  sha256: 543ba8d891b81c99e1d72afccdf3497216080cd08dc59d75f3b3e91fc53f1be3
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
