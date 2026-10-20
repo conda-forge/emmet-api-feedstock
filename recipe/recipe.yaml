@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: emmet-api
-  version: "0.87.3"
-  python_min: "3.11"
+  version: "0.88.0"
+  python_min: "3.12"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 543ba8d891b81c99e1d72afccdf3497216080cd08dc59d75f3b3e91fc53f1be3
+  sha256: 33be6c76ef900aa218f19cd7d8d29a3c4030867873f2c37c0ad1eab1bd6d07cc
 
 build:
   number: 0
@@ -22,8 +22,7 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - setuptools
-    - setuptools-scm
+    - hatchling
   run:
     - boto3
     - emmet-core
